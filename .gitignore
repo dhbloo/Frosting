@@ -26,7 +26,8 @@ frosting_scene/frosting_compositor.py
 run_viewer.py
 blender/dev_mode.py
 dev_render_blender_scene.py
-nvdiffrast/*
+nvdiffrast
+pytorch3d
 configs/test.json
 configs/test_shelly.json
 dev_test.py

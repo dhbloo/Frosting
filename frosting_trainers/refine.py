@@ -285,7 +285,7 @@ def refined_training(args):
     # Load coarse SuGaR model
     CONSOLE.print(f'\nLoading SuGaR model {sugar_model_path}...')
     with torch.no_grad():
-        checkpoint = torch.load(sugar_model_path, map_location=nerfmodel.device)
+        checkpoint = torch.load(sugar_model_path, map_location=nerfmodel.device, weights_only=False)
         sugar = SuGaR(
             nerfmodel=nerfmodel,
             points=checkpoint['state_dict']['_points'],

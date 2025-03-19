@@ -2297,7 +2297,7 @@ def load_frosting_model(
         device = nerfmodel.device
         
     print("Creating Frosting model from checkpoint:", frosting_checkpoint_path)
-    checkpoint = torch.load(frosting_checkpoint_path, map_location=device)
+    checkpoint = torch.load(frosting_checkpoint_path, map_location=device, weights_only=False)
     n_gaussians_in_frosting = checkpoint['state_dict']['_bary_coords'].shape[0]
     sh_levels = int(np.sqrt(checkpoint['state_dict']['_sh_coordinates_rest'].shape[1] + 1))
     
